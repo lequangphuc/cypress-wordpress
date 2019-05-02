@@ -69,21 +69,18 @@ Cypress.Commands.add('createPage', (header, content) => {
   get('#publish').wait(500).click().wait(1500);
 });
 
-Cypress.Commands.add('deletePost', ({ title, postType }) => {
-  cy.visit(`wp-admin/edit.php?post_type=${postType}`).
-  get(`a[aria-label="Move “${title}” to the Trash"]`).
+Cypress.Commands.add('deletePost', (title) => {
+  cy.get(`a[aria-label="Move “${title}” to the Trash"]`).
   click({force: true , multiple: true });
 });
 
-Cypress.Commands.add('editPost', ({ title, postType }) => {
-  cy.visit(`wp-admin/edit.php?post_type=${postType}`).
-  get(`a[aria-label="Edit “${title}”"]`).
+Cypress.Commands.add('editPost', (title) => {
+  cy.get(`a[aria-label="Edit “${title}”"]`).
   click({ force: true });
 });
 
-Cypress.Commands.add('viewPost', ({ title, postType }) => {
-  cy.visit(`wp-admin/edit.php?post_type=${postType}`).
-  get(`a[aria-label="View “${title}”"]`).
+Cypress.Commands.add('viewPost', (title) => {
+  cy.get(`a[aria-label="View “${title}”"]`).
   click({ force: true });
 });
 
@@ -113,7 +110,7 @@ Cypress.Commands.add('logoutWpAdmin', () => {
   click({ force: true }).wait(500);
 });
 
-Cypress.Commands.add('requestUrl', ({ url, status }) => {
+Cypress.Commands.add('getUrlStatus', ({ url, status }) => {
   cy.request({
     url: url,
     followRedirect: false,
@@ -123,7 +120,7 @@ Cypress.Commands.add('requestUrl', ({ url, status }) => {
   })
 });
 
-Cypress.Commands.add('requestPrivateUrl', ({ url, isPermission = true }) => {
+Cypress.Commands.add('requestUrl', ({ url, isPermission = true }) => {
   cy.request({
     url: url,
     followRedirect: false,

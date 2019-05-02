@@ -40,22 +40,18 @@ cy.bulkActions('delete');
 
 cy.createPage('Hello World', 'This is example content');
 
-cy.deletePost({
-    title: 'Hello World',
-    postType: 'page',
-});
+cy.visit('wp-admin/edit.php?post_type=page').
+deletePost('Hello World');
 
-cy.viewPost({
-    title: 'Sample Product',
-    postType: 'product'
-});
+cy.visit('wp-admin/edit.php?post_type=product').
+viewPost('WooCommerce Product');
 
-cy.requestUrl({
+cy.getUrlStatus({
     url: 'wp-content/redirect.php',
     status: 301
 });
 
-cy.requestPrivateUrl({
+cy.requestUrl({
     url: 'wp-content/avatar.png',
     isPermission: true
 });
@@ -85,10 +81,8 @@ describe('My First Test', () => {
             password: '123456'
         }).
         createPage('Hello World', 'My first post').
-        viewPost({
-            title: 'Hello World',
-            postType: 'page'
-        }).
+        visit('wp-admin/edit.php?post_type=page').
+        viewPost('Hello World').
         url().should('include', 'hello-world').
         get('h1.entry-title').
         should('contain', 'Hello World');
