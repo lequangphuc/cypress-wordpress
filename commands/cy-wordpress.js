@@ -26,7 +26,7 @@ Cypress.Commands.add('login', ({ username, password }) => {
   get('#loginform').submit().wait(1000);
 });
 
-Cypress.Commands.add('uploadFile', () => {
+Cypress.Commands.add('uploadFile', (imageLocation) => {
   cy.visit('/wp-admin/media-new.php?browser-uploader').
   inputFile('#async-upload', imageLocation).
   get('#html-upload').click().
