@@ -1,5 +1,16 @@
 # cypress-wordpress
-Cypress helper commands for WordPress
+Cypress helper commands for WordPress.
+
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/lequangphuc/cypress-wordpress/blob/master/LICENSE)
+[![version](https://img.shields.io/badge/version-1.0.0-red.svg)](https://github.com/lequangphuc/cypress-wordpress)
+
+## Table of Contents
+
+- [Get Started](#get-started)
+- [Usage](#usage)
+  - [Example](#example)
+  - [Writing Your First Test](#writing-your-first-test)
+- [License](#license)
 
 ## Get Started
 
@@ -66,9 +77,9 @@ cy.installPlugin('plugin/prevent_direct_access_gold.zip');
 ### Writing Your First Test
 
 ```javascript
-describe('My First Test', function() {
+describe('My First Test', () => {
 
-    it('Cypress WordPress', function() {
+    it('Cypress WordPress', () => {
         cy.login({
             username: 'admin2',
             password: '123456'
@@ -85,3 +96,7 @@ describe('My First Test', function() {
 
 });
 ```
+
+## License
+
+This project is licensed under the terms of the [MIT license](/LICENSE).
