@@ -31,7 +31,10 @@ cy.deletePost({
     postType: 'page',
 });
 
-cy.requestUrl('wp-content/avatar.png', 200);
+cy.requestUrl({
+    url: 'wp-content/redirect.php',
+    status: 301
+});
 
 cy.requestPrivateUrl({
     url: 'wp-content/avatar.png',
