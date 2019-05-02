@@ -66,9 +66,9 @@ cy.installPlugin('plugin/prevent_direct_access_gold.zip');
 ### Writing Your First Test
 
 ```javascript
-describe('My First Test', () {
+describe('My First Test', () => {
 
-    it('Cypress WordPress', () {
+    it('Cypress WordPress', () => {
         cy.login({
             username: 'admin2',
             password: '123456'
