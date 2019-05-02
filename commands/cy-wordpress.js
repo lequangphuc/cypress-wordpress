@@ -70,16 +70,20 @@ Cypress.Commands.add('createPage', (header, content) => {
 });
 
 Cypress.Commands.add('deletePost', ({ title, postType }) => {
-  postType = postType || 'post';
   cy.visit(`wp-admin/edit.php?post_type=${postType}`).
   get(`a[aria-label="Move “${title}” to the Trash"]`).
   click({force: true , multiple: true });
 });
 
 Cypress.Commands.add('editPost', ({ title, postType }) => {
-  postType = postType || 'post';
   cy.visit(`wp-admin/edit.php?post_type=${postType}`).
   get(`a[aria-label="Edit “${title}”"]`).
+  click({ force: true });
+});
+
+Cypress.Commands.add('viewPost', ({ title, postType }) => {
+  cy.visit(`wp-admin/edit.php?post_type=${postType}`).
+  get(`a[aria-label="View “${title}”"]`).
   click({ force: true });
 });
 
@@ -153,4 +157,32 @@ Cypress.Commands.add('installPlugin', (pluginFile) => {
   get('.upload-view-toggle').click().
   inputFile('#pluginzip', pluginFile).
   get('#install-plugin-submit').click().wait(2000);
+});
+
+Cypress.Commands.add('createAccount', ({ username, password, role }) => {
+  cy.visit('/wp-admin/user-new.php').
+  get('#user_login').type(username).
+  get('#email').type(`${username}@example.com`).
+  get('.wp-generate-pw').click().
+  get('#pass1-text').type(password).
+  get('input[name="pw_weak"]').check({ force: true }).
+  get('#role').select(role).
+  get('#createuser').submit();
+});
+
+Cypress.Commands.add('deleteAccount', (username) => {
+  cy.visit('/wp-admin/users.php').
+  get('#the-list > tr > .username > strong > a').
+  contains(username).
+  should('have.attr', 'href').
+  then((url) => {
+      let user_url = new URL(url);
+      let uid = user_url.searchParams.get("user_id");
+      cy.log(uid);
+      cy.get(`#user-${uid} > .username > .row-actions > .delete > .submitdelete`).
+      click({ force: true });
+  }).
+  get('input[name="delete_option"]').
+  click({ force: true, multiple: true }).
+  get('#submit').click();
 });

@@ -20,6 +20,7 @@ cy.login({
 });
 
 cy.uploadFile('file/avatar.png');
+
 cy.deleteFile('avatar');
 
 cy.bulkActions('delete');
@@ -31,6 +32,11 @@ cy.deletePost({
     postType: 'page',
 });
 
+cy.viewPost({
+    title: 'Sample Product',
+    postType: 'product'
+});
+
 cy.requestUrl({
     url: 'wp-content/redirect.php',
     status: 301
@@ -39,6 +45,12 @@ cy.requestUrl({
 cy.requestPrivateUrl({
     url: 'wp-content/avatar.png',
     isPermission: true
+});
+
+cy.createAccount({
+    username: 'phuclq',
+    password: '$P$B2JvYconDNTLqHEP9',
+    role: 'subscriber'
 });
 
 cy.deactivatePlugin('Prevent Direct Access Gold');
