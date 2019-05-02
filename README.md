@@ -1,7 +1,7 @@
 # cypress-wordpress
 Cypress helper commands for WordPress
 
-## Usage
+## Get Started
 
 `cypress-wordpress` extends Cypress' `cy` command.
 
@@ -11,7 +11,9 @@ Add this line to your project's `cypress/support/commands.js`:
 import 'cypress-wordpress/commands/cy-wordpress';
 ```
 
-## Example
+## Usage
+
+### Example
 
 ```javascript
 cy.login({
@@ -59,4 +61,27 @@ cy.activatePlugin('Protect Pages & Posts Gold');
 
 cy.installPlugin('plugin/prevent_direct_access_gold.zip');
 
+```
+
+### Writing Your First Test
+
+```javascript
+describe('My First Test', function() {
+
+    it('Cypress WordPress', function() {
+        cy.login({
+            username: 'admin2',
+            password: '123456'
+        }).
+        createPage('Hello World', 'My first post').
+        viewPost({
+            title: 'Hello World',
+            postType: 'page'
+        }).
+        url().should('include', 'hello-world').
+        get('h1.entry-title').
+        should('contain', 'Hello World');
+    });
+
+});
 ```
