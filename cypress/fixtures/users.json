@@ -1,0 +1,18 @@
+{
+  "admin": {
+    "username": "administrator"
+  },
+  "editor": {
+    "username": "editor"
+  },
+  "subscriber": {
+    "username": "subscriber"
+  },
+  "contributor": {
+    "username": "contributor"
+  },
+  "author": {
+    "username": "author"
+  },
+  "password": "123456"
+}
