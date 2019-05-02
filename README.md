@@ -1,5 +1,23 @@
-# cypress-wordpress
-Cypress helper commands for WordPress
+<div align="center">
+<h1>cypress-wordpress</h1>
+
+<a href="https://ymese.com">
+<img width="150" alt="ymese" src="https://ymese.com/wp-content/themes/ymese-website/img/ymese-logos.png" />
+</a>
+
+<p>Cypress helper commands for WordPress.</p>
+
+</div>
+
+<hr />
+
+## Table of Contents
+
+- [Get Started](#get-started)
+- [Usage](#usage)
+  - [Example](#example)
+  - [Writing Your First Test](#writing-your-first-test)
+- [License](#license)
 
 ## Get Started
 
