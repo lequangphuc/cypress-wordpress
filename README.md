@@ -7,11 +7,9 @@
 
 <hr />
 
-[![Build Status][build-badge]][build]
-[![Code Coverage][coverage-badge]][coverage]
-[![version][version-badge]][package]
-[![downloads][downloads-badge]][npmtrends]
-[![MIT License][license-badge]][license]
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/lequangphuc/cypress-wordpress/blob/master/LICENSE)
+[![version](https://img.shields.io/badge/version-1.0.0-red.svg)](https://github.com/lequangphuc/cypress-wordpress)
+
 
 ## Table of Contents
 
