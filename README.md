@@ -1,15 +1,17 @@
 <div align="center">
 <h1>cypress-wordpress</h1>
 
-<a href="https://ymese.com">
-<img width="150" alt="ymese" src="https://ymese.com/wp-content/themes/ymese-website/img/ymese-logos.png" />
-</a>
-
 <p>Cypress helper commands for WordPress.</p>
 
 </div>
 
 <hr />
+
+[![Build Status][build-badge]][build]
+[![Code Coverage][coverage-badge]][coverage]
+[![version][version-badge]][package]
+[![downloads][downloads-badge]][npmtrends]
+[![MIT License][license-badge]][license]
 
 ## Table of Contents
 
