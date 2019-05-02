@@ -1,6 +1,10 @@
 # cypress-wordpress
 Cypress helper commands for WordPress
 
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/lequangphuc/cypress-wordpress/blob/master/LICENSE)
+
+This project is licensed under the terms of the [MIT license](/LICENSE).
+
 ## Get Started
 
 `cypress-wordpress` extends Cypress' `cy` command.
