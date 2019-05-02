@@ -109,7 +109,7 @@ Cypress.Commands.add('logoutWpAdmin', () => {
   click({ force: true }).wait(500);
 });
 
-Cypress.Commands.add('requestUrl', (url, status) => {
+Cypress.Commands.add('requestUrl', ({ url, status }) => {
   cy.request({
     url: url,
     followRedirect: false,
