@@ -120,7 +120,7 @@ Cypress.Commands.add('getUrlStatus', ({ url, status }) => {
   })
 });
 
-Cypress.Commands.add('requestUrl', ({ url, isPermission = true }) => {
+Cypress.Commands.add('requestPrivateUrl', ({ url, isPermission = true }) => {
   cy.request({
     url: url,
     followRedirect: false,
