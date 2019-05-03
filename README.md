@@ -51,14 +51,14 @@ cy.getUrlStatus({
     status: 301
 });
 
-cy.requestUrl({
+cy.requestPrivateUrl({
     url: 'wp-content/avatar.png',
-    isPermission: true
+    isPermission: false
 });
 
 cy.createAccount({
     username: 'phuclq',
-    password: '$P$B2JvYconDNTLqHEP9',
+    password: '$P$B2JvYconDNTLqH9',
     role: 'subscriber'
 });
 
